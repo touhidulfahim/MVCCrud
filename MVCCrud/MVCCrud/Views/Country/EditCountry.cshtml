@@ -1,0 +1,17 @@
+﻿@model MVCCrud.Models.CrudModel.Country
+
+
+<form id="fromCountry">
+    <fieldset>
+        <legend></legend>
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+        Country Code
+        <input type="text" name="CountryCode" id="CountryCode" class="form-control" value="@Model.CountryCode" />
+        Country Name
+        <input type="text" name="CountryName" id="CountryName" class="form-control" value="@Model.CountryName" />
+        <br />
+        <input type="button" name="btnSubmit" class="btn btn-primary" value="Update" onclick="UpdateCountry()" />
+    </fieldset>
+</form>
+
+
