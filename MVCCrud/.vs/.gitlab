@@ -1,0 +1,13 @@
+{
+  "User": {
+    "Id": 1887977,
+    "Username": "touhidulfahim",
+    "Name": "Mohammad Touhidul Islam",
+    "Email": "muhdtohidul@gmail.com",
+    "AvatarUrl": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1887977/avatar.png",
+    "PrivateToken": "1bbde228388e094763dd45b7ff42c8bf0918f542489bd60fccf99f2fac64e71a",
+    "Host": "https://gitlab.com",
+    "TwoFactorEnabled": false,
+    "ApiVersion": 3
+  }
+}
