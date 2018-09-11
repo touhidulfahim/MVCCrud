@@ -157,6 +157,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BookGenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -169,6 +170,10 @@
     <Compile Include="Migrations\201809102102399_updateBookGenre.cs" />
     <Compile Include="Migrations\201809102102399_updateBookGenre.Designer.cs">
       <DependentUpon>201809102102399_updateBookGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809112109577_addBook.cs" />
+    <Compile Include="Migrations\201809112109577_addBook.Designer.cs">
+      <DependentUpon>201809112109577_addBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
@@ -466,6 +471,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BookGenre\EditBookGenre.cshtml" />
+    <Content Include="Views\Book\ViewBook.cshtml" />
+    <Content Include="Views\Book\AddBook.cshtml" />
+    <Content Include="Views\Book\EditBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -482,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809102102399_updateBookGenre.resx">
       <DependentUpon>201809102102399_updateBookGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809112109577_addBook.resx">
+      <DependentUpon>201809112109577_addBook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

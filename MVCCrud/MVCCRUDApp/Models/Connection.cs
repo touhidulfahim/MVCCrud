@@ -14,8 +14,9 @@ namespace MVCCRUDApp.Models
         }
 
         public virtual DbSet<BookGenre> BookGenre { get; set; }
+        public virtual DbSet<Book> Book { get; set; }
 
-        
+
         public static ConnectionDb Create()
         {
             return new ConnectionDb();
