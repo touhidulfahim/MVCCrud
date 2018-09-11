@@ -19,7 +19,7 @@ namespace MVCCRUDApp.Models
         [Display(Name = "NAME")]
         [StringLength(50)]
         [Index(IsUnique = true)]
-        [Remote("IsCountryNameExists", "Country", HttpMethod = "POST", ErrorMessage = "Country name already exists!")]
+        [Remote("IsBookGenreNameExists", "BookGenre", HttpMethod = "POST", ErrorMessage = "Book Genre Name already exists!")]
         public string BookGenreName { get; set; }
         
     }

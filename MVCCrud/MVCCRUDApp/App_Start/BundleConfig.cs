@@ -20,10 +20,16 @@ namespace MVCCRUDApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/DataTables/jquery.dataTables.min.js",
+                      "~/Scripts/DataTables/dataTables.bootstrap4.min.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/DataTables/css/jquery.dataTables.min.css",
+                      "~/Content/DataTables/css/responsive.bootstrap.min.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
         }
     }

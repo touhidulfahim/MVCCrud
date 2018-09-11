@@ -1,0 +1,119 @@
+﻿@model IEnumerable<MVCCRUDApp.Models.BookGenre>
+
+@{
+    ViewBag.Title = "BOOK GENRE";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        thead{
+            background:#0b3356;
+            color:#fff;
+        }
+    </style>
+
+}
+
+<div class="">
+    <br />
+    <div class="note note-success">
+        <h3 align="center">@ViewBag.Title</h3>
+        <p>
+           
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <a href="@Url.Action("AddBookGenre", "BookGenre")" id="Add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add New</a>
+                    </div>                    
+                </div>
+                <div class="portlet-body">
+                    <table id="demoGrid" class="table table-striped">
+                        <thead id="thed">
+                            <tr>
+                                <th>SL No </th>
+                                <th>Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ int i = 0;}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @{i++;}
+                                        @i
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BookGenreName)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("EditBookGenre", "BookGenre", new { id = item.BookGenreId })" class="editDialog btn btn-info"><i class="fa fa-pencil-square-o"></i>&nbsp;Edit</a>
+                                    
+                            </td>
+                                    <td>
+                                        @Ajax.ActionLink(" Delete", "Delete", "BookGenre", new { @id = item.BookGenreId }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "div-record" }, new { onclick = "return confirm('Are you sure to delete this record!');", @class = "fa fa-trash-o btn btn-danger" })
+                                    </td>
+                                </tr>
+                                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal bd-example-modal-sm" tabindex="-1" role="dialog" id="Add-Model" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>@ViewBag.Title</strong></h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="divForAdd">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal bd-example-modal-sm" id="Edit-Model" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>@ViewBag.Title</strong></h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="divForUpdate">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/Modal.js">       
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#demoGrid').DataTable();
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
